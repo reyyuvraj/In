@@ -5,20 +5,20 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeScreenFragment">
 
-    <fragment
+    <!--<fragment
         android:id="@+id/startUpFragment"
         android:name="com.example.ins.fragment.StartUpFragment"
         android:label="fragment_start_up"
         tools:layout="@layout/fragment_start_up" >
-        <!--<action
+        <action
             android:id="@+id/action_startUpFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
-            />-->
-    </fragment>
+            />
+    </fragment>-->
 
     <fragment
         android:id="@+id/homeScreenFragment"
@@ -42,6 +42,10 @@
         tools:layout="@layout/fragment_message">
         <action
             android:id="@+id/action_messageFragment_to_homeScreenFragment"
-            app:destination="@id/homeScreenFragment" />
+            app:destination="@id/homeScreenFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
     </fragment>
 </navigation>

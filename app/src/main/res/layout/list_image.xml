@@ -79,19 +79,20 @@
 
                 <ImageView
                     android:id="@+id/comment"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:foregroundGravity="center"
                     android:layout_marginStart="10dp"
                     android:layout_toEndOf="@id/like"
-                    android:src="@drawable/ic_comment" />
+                    android:src="@drawable/comm" />
 
                 <ImageView
-                    android:id="@+id/iv_send"
+                    android:id="@+id/send"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginStart="10dp"
                     android:layout_toEndOf="@+id/comment"
-                    android:src="@drawable/ic_inbox" />
+                    android:src="@drawable/send" />
 
                 <ImageView
                     android:id="@+id/save"

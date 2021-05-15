@@ -17,34 +17,35 @@
         android:theme="?attr/actionBarTheme">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/imageView"
+            <ImageButton
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="0dp"
-                android:src="@drawable/new_post" />
+                android:layout_alignParentStart="true"
+                android:background="@color/white"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_add"
+                android:id="@+id/imageView"/>
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="41dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="8dp"
                 android:layout_toStartOf="@+id/inbox"
                 android:layout_toEndOf="@id/imageView"
                 android:src="@drawable/logo" />
 
             <ImageButton
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_alignParentEnd="true"
                 android:background="@color/white"
-                android:src="@drawable/direct_message_icon"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/dm_icon"
                 android:id="@+id/inbox"/>
 
         </RelativeLayout>

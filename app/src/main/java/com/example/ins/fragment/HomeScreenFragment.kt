@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,33 +16,30 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.ins.R
 import com.example.ins.recycler.AdapterImage
 import com.example.ins.recycler.AdapterMessage
+import com.example.ins.recycler.DataMessage
+import com.example.ins.recycler.DataPost
 
 
-class HomeScreenFragment : Fragment(), View.OnClickListener {
+class HomeScreenFragment : Fragment() {
 
-    private lateinit var navController: NavController
-    private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<AdapterMessage.ViewHolder>? = null
+    private lateinit var pAdapter: AdapterImage
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home_screen, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        imageList.apply{
-        layoutManager = LinearLayoutManager(activity)
-        adapter = AdapterImage()}
-        navController = Navigation.findNavController(view)
-        view.findViewById<Button>(R.id.inbox).setOnClickListener(this)
-    }
-
-    override fun onClick(v: View?) {
-        when(v!!.id){
-            R.id.inbox -> navController!!.navigate(R.id.action_homeScreenFragment_to_messageFragment)
+        // Inflate the layout for this fragment
+        val view: View = inflater.inflate(R.layout.fragment_home_screen, container, false)
+        val messages: RecyclerView = view.findViewById(R.id.imageList)
+        messages.apply {
+            layoutManager = LinearLayoutManager(context)
+            pAdapter = AdapterImage()
+            adapter = pAdapter
         }
+        val data = DataPost.pPost()
+        pAdapter.pList(data)
+        view.findViewById<ImageButton>(R.id.inbox).setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_homeScreenFragment_to_messageFragment) }
+        return view
     }
 }
