@@ -8,71 +8,33 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ins.R
 import com.example.ins.recycler.AdapterMessage
 import com.example.ins.recycler.ModelMessage
 
-class MessageFragment : Fragment(), View.OnClickListener {
+class MessageFragment : Fragment(){
 
-    lateinit var navController: NavController
-    private val messageList = ArrayList<ModelMessage>()
-    private lateinit var messageAdapter: AdapterMessage
+    private var layoutManager: RecyclerView.LayoutManager? = null
+    private var adapter: RecyclerView.Adapter<AdapterMessage.ViewHolder>? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_message, container, false)
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
-        prepareMessageData()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        navController = Navigation.findNavController(view)
-        view.findViewById<Button>(R.id.back).setOnClickListener(this)
-    }
-
-    override fun onClick(v: View?) {
-        when(v!!.id){
-            R.id.back -> requireActivity().onBackPressed()
+    override fun onViewCreated(itemView: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(itemView, savedInstanceState)
+        messages.apply {
+            // set a LinearLayoutManager to handle Android
+            // RecyclerView behavior
+            layoutManager = LinearLayoutManager(activity)
+            // set the custom adapter to the RecyclerView
+            adapter = AdapterMessage()
         }
-    }
-
-    private fun prepareMessageData(){
-        var message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        message = ModelMessage(R.drawable.img1,"omar","Active 10h ago")
-        messageList.add(message)
-        messageAdapter.notifyDataSetChanged()
     }
 }

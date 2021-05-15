@@ -106,7 +106,7 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/message_list"
+        android:id="@+id/messages"
         android:layout_below="@+id/search_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

@@ -1,37 +1,69 @@
 package com.example.ins.recycler
 
+
+import androidx.recyclerview.widget.RecyclerView
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 import com.example.ins.R
+import com.example.ins.fragment.MessageFragment
 
-internal class AdapterMessage(private val messages: ArrayList<ModelMessage>) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class AdapterMessage : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return MessageViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.list_message, parent, false)
-        )
+    private val pic = arrayOf(R.drawable.pfp01,
+        R.drawable.pfp01,
+        R.drawable.pfp01,
+        R.drawable.pfp01,
+        R.drawable.pfp01
+    )
+
+    private val name = arrayOf("landscape",
+        "landscape",
+        "landscape",
+        "landscape",
+        "landscape"
+    )
+
+    private val activity = arrayOf("Liked a message",
+        "Liked a message",
+        "Liked a message",
+        "Liked a message",
+        "Liked a message",
+    )
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+        var pPic: ImageView = itemView.findViewById(R.id.pfp)
+        var pName: TextView = itemView.findViewById(R.id.pfpName)
+        var pActivity: TextView = itemView.findViewById(R.id.pfpTime)
+
+        init {
+
+            itemView.setOnClickListener{
+                var position: Int = getAdapterPosition()
+                val context = itemView.context
+                val intent = Intent(context, MessageFragment::class.java).apply{
+                }
+                context.startActivity(intent)
+            }
+        }
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val item = messages[position]
-        holder.user_pfp = item.getUser()
-        holder.username.text = item.getUsername()
-        holder.last_activity.text = item.getActivity()
+    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ViewHolder {
+        val v = LayoutInflater.from(viewGroup.context)
+            .inflate(R.layout.list_message, viewGroup, false)
+        return ViewHolder(v)
     }
 
     override fun getItemCount(): Int {
-        return messages.size
+        return pic.size
     }
 
-    internal inner class MessageViewHolder constructor(itemView: View): RecyclerView.ViewHolder(itemView){
-        var pf: ImageView = itemView.findViewById(R.id.pfp)
-        var name: TextView = itemView.findViewById(R.id.pfp_name)
-        var activity: TextView = itemView.findViewById(R.id.pfp_time)
+    override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, i: Int) {
+        viewHolder.itemView.pfp.setImageResource(pic[i])
+        viewHolder.itemView.pfpName.text = name[i]
+        viewHolder.itemView.pfpTime.text = activity[i]
     }
-
 }

@@ -3,8 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:padding="15dp"
-    android:id="@+id/parent_layout">
+    android:id="@+id/parent_layout"
+    tools:context=".recycler.AdapterMessage">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/pfp"
@@ -20,7 +22,7 @@
         android:layout_toEndOf="@+id/pfp">
 
         <TextView
-            android:id="@+id/pfp_name"
+            android:id="@+id/pfpName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
@@ -29,10 +31,10 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/pfp_time"
+            android:id="@+id/pfpTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/pfp_name"
+            android:layout_below="@+id/pfpName"
             android:text="Active 10h ago"
             android:textSize="15sp" />
 
