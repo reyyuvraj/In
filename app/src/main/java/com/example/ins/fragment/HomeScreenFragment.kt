@@ -31,8 +31,8 @@ class HomeScreenFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_home_screen, container, false)
-        val messages: RecyclerView = view.findViewById(R.id.imageList)
-        messages.apply {
+        val images: RecyclerView = view.findViewById(R.id.imageList)
+        images.apply {
             layoutManager = LinearLayoutManager(context)
             pAdapter = AdapterImage()
             adapter = pAdapter
@@ -40,7 +40,9 @@ class HomeScreenFragment : Fragment() {
         val data = DataPost.pPost()
         pAdapter.pList(data)
         view.findViewById<ImageButton>(R.id.inbox).setOnClickListener {
-            Navigation.findNavController(view).navigate(R.id.action_homeScreenFragment_to_messageFragment) }
+            Navigation.findNavController(view)
+                .navigate(R.id.action_homeScreenFragment_to_messageFragment)
+        }
         return view
     }
 }
