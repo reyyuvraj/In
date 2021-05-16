@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginVertical="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -24,7 +25,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/postView">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,7 +71,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:id="@+id/postInteraction">
 
                 <ImageView
                     android:id="@+id/like"
@@ -103,6 +106,73 @@
             </RelativeLayout>
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/postView"
+            android:layout_marginLeft="10dp"
+            android:text="705 likes"
+            android:textStyle="bold"
+            android:textSize="16dp"
+            android:id="@+id/likes"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/likes"
+            android:layout_marginLeft="10dp"
+            android:text="oberon"
+            android:textSize="15dp"
+            android:id="@+id/uName"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/uName"
+            android:layout_marginLeft="10dp"
+            android:text="View all 11 comments"
+            android:textSize="14dp"
+            android:id="@+id/uComments"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/uComments"
+            android:id="@+id/uInteract">
+
+            <ImageView
+                android:id="@+id/uHeart"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="10dp"
+                android:src="@drawable/heart" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/uProfile"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/img1"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/addComment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="Add a comment..."/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 
