@@ -11,24 +11,45 @@ class DataPost {
             val pList = ArrayList<ModelImage>()
             pList.add(
                 ModelImage(
-                    "rar",
-                    R.drawable.pfp01,
-                    R.drawable.post01
-                )
+                    "Debby",
+                    R.drawable.pfp03,
+                    R.drawable.post07)
             )
             pList.add(
                 ModelImage(
-                    "rar",
-                    R.drawable.pfp01,
-                    R.drawable.post01
-                )
+                    "omar",
+                    R.drawable.pfp04,
+                    R.drawable.post02)
             )
             pList.add(
                 ModelImage(
-                    "rar",
-                    R.drawable.pfp01,
-                    R.drawable.post01
-                )
+                    "cage",
+                    R.drawable.pfp06,
+                    R.drawable.post01)
+            )
+            pList.add(
+                ModelImage(
+                    "zor",
+                    R.drawable.pfp08,
+                    R.drawable.post08)
+            )
+            pList.add(
+                ModelImage(
+                    "Mask Behind A Mask",
+                    R.drawable.pfp02,
+                    R.drawable.post03)
+            )
+            pList.add(
+                ModelImage(
+                    "Jen",
+                    R.drawable.pfp09,
+                    R.drawable.img1)
+            )
+            pList.add(
+                ModelImage(
+                    "Re",
+                    R.drawable.pfp07,
+                    R.drawable.pfp07)
             )
             return pList
         }

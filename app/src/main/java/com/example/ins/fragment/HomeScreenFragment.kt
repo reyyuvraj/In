@@ -22,6 +22,7 @@ import com.example.ins.recycler.DataPost
 
 class HomeScreenFragment : Fragment() {
 
+
     private lateinit var pAdapter: AdapterImage
 
     override fun onCreateView(
