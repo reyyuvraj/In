@@ -29,7 +29,6 @@ class HomeScreenFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_home_screen, container, false)
         val images: RecyclerView = view.findViewById(R.id.imageList)
         images.apply {
