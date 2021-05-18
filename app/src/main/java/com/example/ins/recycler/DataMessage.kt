@@ -35,7 +35,7 @@ class DataMessage {
             mList.add(
                 ModelMessage(
                     R.drawable.pfp05,
-                    "user",
+                    "jess",
                     "liked a message")
             )
             mList.add(

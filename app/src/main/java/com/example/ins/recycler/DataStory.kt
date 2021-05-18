@@ -11,43 +11,48 @@ class DataStory {
             val sList = ArrayList<ModelStory>()
             sList.add(
                 ModelStory(
-                    R.drawable.pfp09)
+                    R.drawable.pfp09,
+                "Jen")
             )
             sList.add(
                 ModelStory(
-                    R.drawable.pfp08)
+                    R.drawable.pfp08,
+                "zor")
             )
             sList.add(
                 ModelStory(
-                    R.drawable.pfp07)
+                    R.drawable.pfp07,
+                "Re")
             )
             sList.add(
                 ModelStory(
-                    R.drawable.pfp06)
+                    R.drawable.pfp06,
+                "cage")
             )
             sList.add(
                 ModelStory(
-                    R.drawable.pfp07)
+                    R.drawable.pfp05,
+                "jess")
             )
             sList.add(
                 ModelStory(
-                    R.drawable.pfp05)
+                    R.drawable.pfp04,
+                "omar")
             )
             sList.add(
                 ModelStory(
-                    R.drawable.pfp04)
+                    R.drawable.pfp03,
+                "Debby")
             )
             sList.add(
                 ModelStory(
-                    R.drawable.pfp03)
+                    R.drawable.pfp02,
+                "Mask")
             )
             sList.add(
                 ModelStory(
-                    R.drawable.pfp02)
-            )
-            sList.add(
-                ModelStory(
-                    R.drawable.pfp01)
+                    R.drawable.pfp01,
+                "hugh")
             )
             return sList
         }

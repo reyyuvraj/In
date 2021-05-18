@@ -53,8 +53,18 @@
     </androidx.appcompat.widget.Toolbar>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/imageList"
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
         android:layout_below="@+id/toolbar"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/storyList"
+        android:orientation="horizontal">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/imageList"
+        android:layout_below="@+id/storyList"
         android:layout_above="@id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
